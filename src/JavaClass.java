@@ -1,6 +1,3 @@
-import java.time.Year;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class JavaClass {
@@ -207,32 +204,117 @@ class LeapYear{
                 System.out.println( year + " is a leap year ");
             else if (year%100==0) {
                 System.out.println(year + " is not a leap year");
-            } else if (year%4==0) {
+            } else if (year % 4 == 0) {
                 System.out.println(year + " is  a leap year");
-            }
-            else System.out.println(year+" is not a leapYear");
+            } else System.out.println(year + " is not a leap");
         }
         else System.out.println(year+" does not Exist ");
     }
 }
 
-class PrimeNumber{
 
+class PrimeNumber {
     public static void main(String[] args) {
-
-        int n = 2;
-        int count =0;
-        for(int i = 1 ; i<=7 ;i++){
-            if(n%i==0) {
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        int count = 1;
+        for (int i = 1; i < num; i++) {
+            if (num % i == 0) {
                 count++;
             }
         }
-        if(count==2){
-            System.out.println("is a prime Number" );
+        if (count == 2) System.out.println("Prime number");
+        else System.out.println("Not Prime");
+
+    }
+}
+
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int numberOfElements = scanner.nextInt();
+        int maxElement = 0;
+        int elements = 0;
+        for (int i = 0; i < numberOfElements; i++) {
+            elements = scanner.nextInt();
+            if (elements % 4 == 0) {
+                if (elements > maxElement) {
+                    maxElement = elements;
+                }
+            }
         }
-        else {
-            System.out.println("Not a prime Number");
+        System.out.println(maxElement);
+    }
+}
+
+class Main1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int sum = 0;
+        int count = 0;
+        double average = 0;
+        for (int i = a; i <= b; i++) {
+            if (i % 3 == 0) {
+                sum += i;
+                count = count + 1;
+                average = (double) sum / count;
+            }
+        }
+        System.out.println(average);
+    }
+}
+
+
+class a {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+            if (i < 3) {
+                continue;
+            } else {
+                for (int j = 0; j < 5; j++) {
+                    System.out.println(j);
+                }
+            }
         }
     }
 }
 
+class switch1 {
+    public static void main(String[] args) {
+      int var1 = 100;
+      int var2 = 0;
+
+        switch (var1) {
+            case 100:
+                var2 += var1;
+            case 200:
+                var2 += var1 / 4;
+            case 300:
+                var2 += var1 / 10;
+            default:
+                var2 = 500;
+        }
+        System.out.println(var2);
+    }
+}
+
+class Main2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+
+        switch (num){
+            case 1 -> {
+                System.out.println ("Yes!");
+            }
+            case 2, 3, 4 -> {
+                System.out.println ("No!");
+            }
+            default -> System.out.println ("Unknown number");
+        }
+    }
+}
